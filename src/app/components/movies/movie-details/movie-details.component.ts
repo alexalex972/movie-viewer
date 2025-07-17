@@ -32,6 +32,10 @@ export class MovieDetailsComponent implements OnInit {
         }
     }
 
+    public goBack(): void {
+        window.history.back();
+    }
+
     public backdropImage(movie: Movie | null): string {
         if (!movie?.backdrop_path) return '';
         return `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${getImageUrl(movie.backdrop_path)})`;

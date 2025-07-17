@@ -1,7 +1,7 @@
 <div class="movie-details-container">
     <ng-container *ngIf="movie$ | async as movie">
         <div class="movie-details-breadcrumb-container">
-            <button mat-button extended routerLink="/movies">
+            <button mat-button extended (click)="goBack()">
                 <mat-icon>arrow_back</mat-icon>
                 Back
             </button>
