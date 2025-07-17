@@ -1,0 +1,41 @@
+mat-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    color: var(--mat-sys-primary);
+    background: var(--mat-sys-primary-container);
+    display: flex;
+    justify-content: space-around;
+
+    .nav-title {
+        text-decoration: none;
+        color: var(--mat-sys-on-primary-container);
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    .nav-content {
+        display: flex;
+        align-items: center;
+        width: 1080px;
+    }
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+
+@media (min-width: 850px) {
+    .menu-button {
+        display: none;
+    }
+}
+
+@media (max-width: 850px) {
+    .nav-links {
+        display: none;
+    }
+}

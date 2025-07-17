@@ -1,0 +1,30 @@
+.movie-details {
+    &-container {
+        margin: 0 auto;
+        max-width: 1080px;
+        padding-top: 72px;
+    }
+
+    &-breadcrumb-container {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 16px;
+    }
+
+    &-backdrop {
+        position: relative;
+        padding: 24px;
+        color: #fff;
+        min-height: 400px;
+        margin-bottom: 24px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: end;
+    }
+
+    &-content {
+        position: relative;
+        z-index: 1;
+    }
+}

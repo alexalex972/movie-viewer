@@ -1,0 +1,31 @@
+<div class="movie-details-container">
+    <ng-container *ngIf="movie$ | async as movie">
+        <div class="movie-details-breadcrumb-container">
+            <button mat-button extended routerLink="/movies">
+                <mat-icon>arrow_back</mat-icon>
+                Back
+            </button>
+        </div>
+        <div class="movie-details-backdrop" [style.background-image]="backdropImage(movie)">
+            <div class="movie-details-content">
+                <h1>{{ movie.title }}</h1>
+                <h3>{{ movie.tagline }}</h3>
+                <h2>{{ movie.release_date | date }}</h2>
+
+                <ng-container *ngFor="let genre of movie.genres; let last = last">
+                    <span>{{ genre.name }}</span><span *ngIf="!last">, </span>
+                </ng-container>
+                <p>{{ movie.overview }}</p>
+                <span>⭐ {{ movie.vote_average.toFixed(1) }}/10</span>
+            </div>
+        </div>
+    </ng-container>
+
+    <div *ngIf="loading$ | async">
+        <app-loading [loading$]="loading$" [loadingMessage]="'Loading movie details...'"></app-loading>
+    </div>
+
+    <div *ngIf="error$ | async as error">
+        <app-error [error]="error"></app-error>
+    </div>
+</div>

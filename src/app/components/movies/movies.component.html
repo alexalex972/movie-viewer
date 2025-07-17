@@ -1,0 +1,26 @@
+<div class="movies-container">
+    <ng-container *ngIf="movies$ | async as movies">
+        <div class="movies-grid" *ngIf="movies.length > 0; else noMovies">
+            <mat-card *ngFor="let movie of movies" class="movie-card" appearance="raised" (click)="goToMovie(movie.id)">
+                <mat-card-header>
+                    <mat-card-title class="movie-title">{{ movie.title }}</mat-card-title>
+                </mat-card-header>
+                <img class="movie-poster" mat-card-image [src]="getImgUrl(movie.poster_path)" [alt]="movie.title" />
+                <mat-card-content>
+                    <p>
+                        {{ movie.overview | slice: 0: 100 }}...
+                    </p>
+                    <span class="movie-rating">⭐ {{ movie.vote_average.toFixed(1) }}/10</span>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </ng-container>
+
+    <ng-template #noMovies>
+        <app-loading [loading$]="loading$" [loadingMessage]="'Loading movies...'"></app-loading>
+    </ng-template>
+
+    <div *ngIf="error$ | async as error">
+        <app-error [error]="error"></app-error>
+    </div>
+</div>

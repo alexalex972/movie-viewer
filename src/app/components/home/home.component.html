@@ -1,0 +1,26 @@
+<header class="home-header">
+    <div class="home-header-container">
+        <h1 class="home-header-container-title">{{ title() }}</h1>
+        <h2 class="home-header-container-subtitle">{{ subtitle() }}</h2>
+        <button mat-flat-button="filled" [routerLink]="['/movies']">Browse</button>
+    </div>
+</header>
+<main class="home-main">
+    <div class="home-main-row">
+        <div class="home-main-row-col">
+            <h2>Movie Viewer</h2>
+            <p>Discover and explore your favorite movies. Browse top-rated films, watch trailers, and dive into
+                detailed movie information.</p>
+        </div>
+        <div class="home-main-row-col">
+            <h2>Trending Now</h2>
+            <p>Catch up on what's popular. Stay updated with the latest box office hits and most-watched titles
+                across all genres.</p>
+        </div>
+        <div class="home-main-row-col">
+            <h2>Create Your Watchlist</h2>
+            <p>Save movies you love or plan to watch later. Easily manage your personal watchlist and keep track of
+                your favorites.</p>
+        </div>
+    </div>
+</main>
