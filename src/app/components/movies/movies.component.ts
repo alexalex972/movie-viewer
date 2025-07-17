@@ -26,6 +26,11 @@ export class MoviesComponent implements OnInit {
     public getImgUrl = getImageUrl;
 
     public ngOnInit(): void {
+        // Since we are storing the popular movies, the stored version is displayed once the page is loaded.
+        // If the user navigates to this page, we need to load the popular movies again.
+        // This is to ensure that the latest data is fetched from the API.
+        // However I found it nice to have the movies displayed immediately
+        // while the new data is being fetched.
         this.store.dispatch(loadPopularMovies({ page: 1 }));
     }
 
