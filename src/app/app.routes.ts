@@ -15,4 +15,8 @@ export const routes: Routes = [
         loadComponent: () =>
             import('./components/movies/movie-details/movie-details.component').then(m => m.MovieDetailsComponent),
     },
+    {
+        path: '**',
+        component: HomeComponent,
+    },
 ];

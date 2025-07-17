@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng build ng-movie-viewer-19 --configuration=production --base-href=/movie-viewer/ --output-path=dist/ng-movie-viewer-19 && echo > dist/ng-movie-viewer-19/.nojekyll && npx angular-cli-ghpages --dir=dist/ng-movie-viewer-19"
   },
   "private": true,
   "dependencies": {
