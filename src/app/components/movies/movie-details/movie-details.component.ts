@@ -14,7 +14,7 @@ import { MoviesModule } from "../movies.module";
     selector: 'app-movie-details',
     templateUrl: './movie-details.component.html',
     styleUrls: ['./movie-details.component.scss'],
-    imports: [MoviesModule, MatButtonModule, MatIconModule],
+    imports: [MoviesModule, MatButtonModule, MatIconModule, RouterModule],
 })
 export class MovieDetailsComponent implements OnInit {
     @RouterInput() id = '';
